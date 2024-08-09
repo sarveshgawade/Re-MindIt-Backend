@@ -40,8 +40,8 @@ app.use('/api/v1/user', userRouter);
 app.use('/api/v1/my-passwords', passwordRouter);
 
 
-app.use('/ping',(req,res)=>{
-  res.json('PONG')
+app.get('/ping',(req,res)=>{
+  res.send('PONG')
 })
 app.all('*', (req, res) => {
     res.status(404).json('Page not found!');
